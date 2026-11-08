@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neshama Leadership Institute: Apply</title>
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:12px}
+details.faq summary{font-weight:600;cursor:pointer;color:var(--ink);font-size:17px}
+details.faq summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:6px}
+details.faq p{margin:10px 0 0;font-size:16px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#iq-ok{display:none}
+.foot{text-align:center;padding:20px 20px calc(80px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--muted)}
+.foot a{color:var(--muted);text-decoration:underline}
+.stlogin{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;color:var(--gold);font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:15px}
+.gain{list-style:none;margin:0 0 20px;padding:0;counter-reset:g}
+.gain li{counter-increment:g;position:relative;padding:16px 18px 16px 58px;margin-bottom:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;color:var(--ink);font-size:17px}
+.gain li::before{content:counter(g);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#14233a;font-weight:800;display:grid;place-items:center}
+.navlink{display:block;text-align:center;margin-top:16px;color:var(--gold);font-weight:600}
+.brand{text-align:center;margin:0 auto 22px}
+.logo{display:block;margin:0 auto;max-height:88px;max-width:70%;width:auto;height:auto}
+.bname{font-weight:800;font-size:22px;color:var(--gold)}
+:root{--bg:#0e1a2b;--card:#16263d;--ink:#f4efe4;--muted:#a9b6c8;--gold:#f2b84b;--line:#2b4162;--ok:#5ad19a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.55}
+section{padding:56px 20px}
+.w{max-width:560px;margin:0 auto}
+h1{font-size:38px;line-height:1.1;font-weight:800;margin:0 0 14px}
+h2{font-size:28px;line-height:1.15;font-weight:800;margin:0 0 14px}
+p{margin:0 0 14px;color:var(--muted);font-size:17px}
+.hero{position:relative;padding-top:72px;text-align:center;background:radial-gradient(ellipse at top,#1d3556,var(--bg) 70%)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px}
+.card h3{margin:0 0 6px;font-size:20px;color:var(--gold)}
+.card p{margin:0}
+.btn{display:block;width:100%;margin-top:20px;padding:16px;border:0;border-radius:99px;background:var(--gold);color:#14233a;font:800 17px inherit;text-align:center;text-decoration:none;cursor:pointer}
+.btn.wa{background:var(--ok);color:#06251a}
+label{display:block;font-weight:600;margin:14px 0 6px;font-size:15px}
+input,select,textarea{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.err{color:#ff8a7a;font-size:14px;min-height:18px;margin-top:10px}
+blockquote{margin:0 0 16px;padding:20px;background:var(--card);border-left:4px solid var(--gold);border-radius:0 16px 16px 0}
+blockquote p{color:var(--ink);font-size:17px;margin:0 0 10px}
+cite{font-style:normal;color:var(--muted);font-size:14px}
+.note{font-size:13px;color:var(--muted);text-align:center}
+#float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:10;padding:14px 22px;border:0;border-radius:99px;background:var(--gold);color:#14233a;font:800 16px inherit;box-shadow:0 6px 24px rgba(0,0,0,.4);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .4s,transform .4s;cursor:pointer}
+#float.show{opacity:1;transform:none;pointer-events:auto}
+dialog{width:min(560px,100%);max-height:92vh;margin:auto;border:1px solid var(--line);border-radius:24px;background:var(--bg);color:var(--ink);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 22px 0}
+.dh h2{margin:0;font-size:24px}
+.x{background:none;border:0;color:var(--muted);font-size:30px;line-height:1;cursor:pointer}
+.db{padding:6px 22px 24px}
+fieldset{border:0;padding:0;margin:18px 0 0}
+legend{font-weight:800;color:var(--gold);padding:0}
+#done{display:none}
+.bar{height:24px;border:2px solid var(--line);border-radius:99px;overflow:hidden;margin:14px 22px 0}
+.bar i{display:block;height:100%;width:0;background:var(--gold);color:#14233a;font:600 12px/20px inherit;text-align:right;padding-right:8px;transition:width .5s}
+.yt{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;margin-bottom:6px}.yt iframe{width:100%;height:100%;border:0}
+.pane{display:none}.pane.on{display:block}
+.hid{display:none}
+.ghost{background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;margin:14px auto 0;display:block;cursor:pointer}
+@media (prefers-reduced-motion:reduce){#float{transition:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <a class="stlogin" href="lessons.html">Student login</a>
+  <div class="w">
+    <div class="brand"><img class="logo" src="logo.png" alt="Neshama Leadership Institute logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="bname" style="display:none">Neshama Leadership Institute</span></div>
+    <h1>Be trained for the work God has called you to</h1>
+    <p>Neshama Leadership Institute equips men and women in the Word, in character and in ministry. [Add one or two lines: location, year founded, programs, online or on-campus.]</p>
+    <button class="btn" data-apply>Apply here</button>
+    <a class="navlink" href="lecturers.html">Meet our lecturers and see our courses</a>
+  </div>
+</section>
+
+<section>
+  <div class="w">
+    <h2>About Neshama</h2>
+    <p>[Write 2–3 sentences introducing the school: who you serve, your doctrinal foundation, and what students can expect.]</p>
+    <h2>What you will gain</h2>
+    <ol class="gain">
+      <li>[Benefit 1: replace with your own line]</li>
+      <li>[Benefit 2]</li>
+      <li>[Benefit 3]</li>
+      <li>[Benefit 4]</li>
+      <li>[Benefit 5]</li>
+      <li>[Benefit 6]</li>
+    </ol>
+    <div class="card"><h3>Our vision</h3><p>[Your vision statement here.]</p></div>
+    <div class="card"><h3>Our mission</h3><p>[Your mission statement here.]</p></div>
+    <a class="navlink" href="lecturers.html">Meet our lecturers and see our courses</a>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="w">
+    <h2>What students say</h2>
+    <blockquote><p>“[Sample testimonial: replace with a real student’s words.]”</p><cite>Student name, Certificate in Theology</cite></blockquote>
+    <blockquote><p>“[Sample testimonial: replace with a real student’s words.]”</p><cite>Student name, Diploma in Ministry</cite></blockquote>
+    <blockquote><p>“[Sample testimonial: replace with a real graduate’s words.]”</p><cite>Graduate name, Pastor</cite></blockquote>
+    <div id="tvwrap" style="display:none">
+      <h3 style="margin:24px 0 10px;color:var(--gold)">Video testimony</h3>
+      <div class="yt"><iframe id="tv" title="Student video testimony" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    </div>
+    <p class="note">Only publish testimonials you have permission to use.</p>
+    <button class="btn" data-apply>Apply here</button>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:8px">
+  <div class="w">
+    <h2>Frequently asked questions</h2>
+    <details class="faq"><summary>Who can apply to Neshama?</summary><p>[Your answer: entry requirements, age, church reference.]</p></details>
+    <details class="faq"><summary>How long are the programs?</summary><p>[Duration of the Certificate, Diploma and Executive combo.]</p></details>
+    <details class="faq"><summary>Are classes online or on campus?</summary><p>[Explain online, on-campus, live classes and weekly recorded lessons.]</p></details>
+    <details class="faq"><summary>What do I need to apply?</summary><p>[List documents, pastor's reference, and the online form.]</p></details>
+    <details class="faq"><summary>How much are the fees and how do I pay?</summary><p>[Fees, payment options and deadlines.]</p></details>
+    <details class="faq"><summary>Will I receive a certificate?</summary><p>[Describe the award, pass mark of 60 and attendance needs.]</p></details>
+  </div>
+</section>
+
+<section id="inquiry" style="padding-top:8px">
+  <div class="w">
+    <h2>Still have a question?</h2>
+    <p>Send us a message and the admissions team will reply by email.</p>
+    <form class="card" id="iq" novalidate>
+      <label for="iq-name">Your name</label><input id="iq-name" autocomplete="name">
+      <label for="iq-email">Email</label><input id="iq-email" type="email" autocomplete="email">
+      <label for="iq-phone">Phone or WhatsApp (optional)</label><input id="iq-phone" type="tel" autocomplete="tel">
+      <label for="iq-msg">Your question</label><textarea id="iq-msg" maxlength="2000"></textarea>
+      <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" tabindex="-1" autocomplete="off"></div>
+      <div class="err" id="iq-err" role="alert"></div>
+      <button class="btn" id="iq-go" type="submit">Send message</button>
+    </form>
+    <div class="card" id="iq-ok"><h3>Thank you</h3><p>We have received your message and will reply by email soon.</p></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <a href="#faq">FAQ</a> &nbsp;·&nbsp; <a href="#inquiry">Ask a question</a> &nbsp;·&nbsp; <a href="lessons.html">Student login</a> &nbsp;·&nbsp; <a href="admin.html">Staff sign in</a>
+</footer>
+
+<button id="float" data-apply>Apply here</button>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <div class="dh"><h2 id="dt">Apply to Neshama</h2><button class="x" id="close" aria-label="Close">&times;</button></div>
+  <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="fill">0%</i></div>
+  <div class="db">
+    <form id="form" novalidate>
+      <fieldset><legend>About you</legend>
+        <label for="name">Full name</label><input id="name" autocomplete="name">
+        <label for="gender">Gender</label><select id="gender"><option value="">Choose</option><option>Male</option><option>Female</option></select>
+        <label for="email">Email</label><input id="email" type="email" autocomplete="email">
+        <label for="phone">WhatsApp number</label><input id="phone" type="tel" autocomplete="tel" placeholder="+234…">
+        <label for="country">Country and city</label><input id="country">
+      </fieldset>
+      <fieldset><legend>Your church</legend>
+        <label for="church">Church and denomination</label><input id="church">
+        <label for="pastor">Pastor’s name</label><input id="pastor">
+        <label for="pastorContact">Pastor’s phone or email</label><input id="pastorContact">
+      </fieldset>
+      <fieldset><legend>Your program</legend>
+        <label for="program">Program</label><select id="program"><option value="">Choose a program</option><option>Certificate in Theology</option><option>Diploma in Ministry</option><option>Advanced Diploma</option></select>
+        <label for="mode">Mode of study</label><select id="mode"><option value="">Choose</option><option>On campus</option><option>Online</option></select>
+        <label for="education">Highest education completed</label><input id="education">
+      </fieldset>
+      <fieldset><legend>Your story</legend>
+        <label for="testimony">Briefly share your testimony of salvation</label><textarea id="testimony"></textarea>
+        <label for="calling">Why do you want to study here, and what is your calling?</label><textarea id="calling"></textarea>
+        <label for="ministry">Current ministry involvement</label><input id="ministry">
+      </fieldset>
+      <div class="err" id="err" role="alert"></div>
+      <button class="btn" id="go" type="submit">Submit application</button>
+    </form>
+    <div id="done">
+      <div class="pane on" id="p1">
+        <h3 style="color:var(--gold);margin:6px 0 10px">Thank you, <span id="nm"></span>. Your application is in.</h3>
+        <div class="yt"><div id="v1"></div></div>
+        <p id="w1" style="margin-top:10px">Watch the video to unlock the next step.</p>
+        <div id="wabox" class="hid">
+          <p>Step 1: join the onboarding group. It is temporary. Once your registration is confirmed, you will be moved to your batch group.</p>
+          <a class="btn wa" id="wa" href="https://chat.whatsapp.com/YOUR-GROUP-LINK" target="_blank" rel="noopener">Join the group</a>
+          <button class="ghost" id="joined" type="button">I have joined, continue</button>
+        </div>
+      </div>
+      <div class="pane" id="p2">
+        <h3 style="color:var(--gold);margin:6px 0 10px">Great, you are in the group</h3>
+        <div class="yt"><div id="v2"></div></div>
+        <div id="embox" class="hid">
+          <p style="margin-top:10px">Step 2: open the email titled “Action required” and tap the confirm button.</p>
+          <button class="btn" id="confirmed" type="button">I have confirmed my email</button>
+        </div>
+      </div>
+      <div class="pane" id="p3">
+        <div class="card"><h3>Welcome to Neshama Leadership Institute</h3>
+        <p>Your registration is complete. A welcome email with your next steps is on its way. We look forward to meeting you.</p></div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+var SCRIPT_URL='PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+var TESTIMONY_VIDEO_ID='YOUR_TESTIMONY_VIDEO_ID'; // the part after v= in the YouTube link
+if(TESTIMONY_VIDEO_ID.indexOf('YOUR_')!==0){
+  document.getElementById('tv').src='https://www.youtube.com/embed/'+encodeURIComponent(TESTIMONY_VIDEO_ID)+'?rel=0&playsinline=1';
+  document.getElementById('tvwrap').style.display='block';
+}
+var dlg=document.getElementById('dlg'),fl=document.getElementById('float');
+
+document.querySelectorAll('[data-apply]').forEach(function(b){b.addEventListener('click',function(){fl.classList.remove('show');dlg.showModal()})});
+if(location.search.indexOf('apply')>-1)dlg.showModal();
+document.getElementById('close').addEventListener('click',function(){dlg.close()});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+
+// Intermittent floating button: 6s on, 8s off, never while the form is open
+var on=false;
+function cycle(){
+  on=!on;
+  if(on&&!dlg.open)fl.classList.add('show');else fl.classList.remove('show');
+  setTimeout(cycle,on?6000:8000);
+}
+setTimeout(cycle,3000);
+
+var fields=['name','gender','email','phone','country','church','pastor','pastorContact','program','mode','education','testimony','calling','ministry'];
+document.getElementById('form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var d={},ok=true;
+  fields.forEach(function(k){d[k]=document.getElementById(k).value.trim();if(!d[k])ok=false});
+  d.email=(d.email||'').toLowerCase();
+  if(!ok||d.email.indexOf('@')<1){document.getElementById('err').textContent='Please complete every field with a valid email.';return}
+  document.getElementById('err').textContent='';
+  var b=document.getElementById('go');b.disabled=true;b.textContent='Sending…';
+  fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+  .then(function(x){return x.json()})
+  .then(function(r){
+    if(!r.ok){b.disabled=false;b.textContent='Submit application';document.getElementById('err').textContent=r.error||'Could not submit. Please try again.';return}
+    document.getElementById('nm').textContent=d.name.split(' ')[0];
+    document.getElementById('form').style.display='none';
+    document.getElementById('done').style.display='block';
+    setProg(33);dlg.scrollTop=0;
+    unlock('v1','wabox','w1');
+  })
+  .catch(function(){b.disabled=false;b.textContent='Submit application';document.getElementById('err').textContent='Could not send. Check your connection and try again.'});
+});
+
+function setProg(p){var f=document.getElementById('fill');f.style.width=p+'%';f.textContent=p+'%';document.getElementById('bar').setAttribute('aria-valuenow',p)}
+function show(id){document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on')});document.getElementById(id).classList.add('on');dlg.scrollTop=0}
+// YouTube videos: put your two video IDs here (the part after v= in the link)
+var VIDEO_IDS={v1:'YOUR_VIDEO_1_ID',v2:'YOUR_VIDEO_2_ID'};
+var players={},reveals={};
+var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+function onYouTubeIframeAPIReady(){
+  ['v1','v2'].forEach(function(id){
+    players[id]=new YT.Player(id,{videoId:VIDEO_IDS[id],playerVars:{rel:0,playsinline:1,modestbranding:1},
+      events:{onStateChange:function(e){
+        if(e.data===0&&reveals[id])reveals[id]();                       // ended
+        if(e.data===1&&reveals[id])setTimeout(reveals[id],25000);        // fallback after 25s of playing
+      },onError:function(){if(reveals[id])reveals[id]()}}});
+  });
+}
+// Reveal the next step when the video ends
+function unlock(vid,box,hint){
+  var done=false;
+  reveals[vid]=function(){if(done)return;done=true;document.getElementById(box).classList.remove('hid');if(hint)document.getElementById(hint).style.display='none'};
+}
+function stopV(id){try{players[id].pauseVideo()}catch(e){}}
+document.getElementById('joined').addEventListener('click',function(){
+  stopV('v1');setProg(66);show('p2');
+  try{players.v2.playVideo()}catch(e){}
+  unlock('v2','embox');
+});
+document.getElementById('confirmed').addEventListener('click',function(){
+  stopV('v2');setProg(100);show('p3');
+});
+
+document.getElementById('iq').addEventListener('submit',function(e){
+  e.preventDefault();
+  var g=function(i){return document.getElementById(i).value.trim()};
+  var d={action:'inquiry',name:g('iq-name'),email:g('iq-email').toLowerCase(),phone:g('iq-phone'),message:g('iq-msg'),website:g('website')};
+  var err=document.getElementById('iq-err');
+  if(!d.name||d.email.indexOf('@')<1||d.message.length<5){err.textContent='Please enter your name, a valid email and your question.';return}
+  err.textContent='';
+  var b=document.getElementById('iq-go');b.disabled=true;b.textContent='Sending…';
+  fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+  .then(function(x){return x.json()})
+  .then(function(r){
+    if(!r.ok){err.textContent=r.error||'Could not send. Please try again.';b.disabled=false;b.textContent='Send message';return}
+    document.getElementById('iq').style.display='none';document.getElementById('iq-ok').style.display='block';
+  })
+  .catch(function(){err.textContent='Connection problem. Please try again.';b.disabled=false;b.textContent='Send message'});
+});
+</script>
+</body>
+</html>
